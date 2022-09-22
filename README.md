@@ -139,3 +139,29 @@ int main()
     
     return 0;
 }
+
+#include <stdio.h>
+int main()
+{
+    int m,n,i,a[10];
+    printf("enter 10 integer numbers:\n");
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",&a[i]);//依次写进数组
+    }
+    printf("\n");
+    for(i=1,m=a[0],n=0;i<10;i++)//for循环依次比较
+    {
+        if(max(m,a[i])>m)//if语句进行比较
+        {
+            m=max(m,a[i]);
+            n=i;//计数真的是神来之笔
+        }
+    }
+    printf("the larget number is %d\nit is the %dth number.\n",m,n+1);
+    return 0;
+}
+int max(int x,int y)
+{
+    return(x>y?x:y);//返回xy中的数字大的数
+}
